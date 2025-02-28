@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Grid, Dialog, DialogContent, IconButton, TextField, Typography, Paper } from '@mui/material';
+import { Grid, Dialog, DialogContent, IconButton, TextField, Typography, Paper, Box, InputAdornment } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import SearchIcon from '@mui/icons-material/Search'; // Import the Search icon
+
 
 
 import { profilePhotos, moviePhotos } from '../data/photos';
@@ -38,14 +40,21 @@ export default function GalleryPage() {
             <Typography variant="h4" align="center" sx={{ marginTop: 8 }}>
                 Gallery
             </Typography>
-            <TextField
-                
-                variant="outlined"
-                fullWidth
-                placeholder='search like  `cermony , award, movies`'
-                onChange={handleSearchChange}
-                sx={{ marginBottom: 2, paddingTop: 2, marginTop:12, width:'40%', alignItems: 'center' }} // Add padding to the top
-            />
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}>
+                <TextField
+                    variant="outlined"
+                    placeholder='Search like `Profile photos, Movie photos`'
+                    onChange={handleSearchChange}
+                    sx={{ maxWidth: '600px', width: '100%' }} 
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <SearchIcon />
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+            </Box>
             <Paper>
             <Grid container spacing={2} sx={{ paddingTop: 2 }}>
                 {filteredImages.map((image, index) => (

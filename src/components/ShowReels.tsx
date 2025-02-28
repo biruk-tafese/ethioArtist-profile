@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, Button, Grid } from '@mui/material';
 import video1 from "../assets/videos/acting10.mp4";
-import video2 from "../assets/videos/video_2025-02-22_10-18-33.mp4";
+import video2 from "../assets/videos/promotion3.mp4";
 import video3 from "../assets/videos/acting18.mp4";
 import video4 from "../assets/videos/promotion1.mp4";
 import video5 from "../assets/videos/acting8.mp4";

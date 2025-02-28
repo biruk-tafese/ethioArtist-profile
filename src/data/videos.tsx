@@ -23,10 +23,10 @@ import actingVid22 from '../assets/videos/acting8.mp4';
 
 import promotion1 from "../assets/videos/promotion1.mp4";
 import promotion2 from "../assets/videos/promotion2.mp4";
-import promotion3 from "../assets/videos/video_2025-02-22_10-18-33.mp4";
-import promotion4 from "../assets/videos/video_2025-02-22_10-18-40.mp4";
-import promotion5 from "../assets/videos/video_2025-02-25_10-02-59.mp4";
-import promotion6 from "../assets/videos/video_2025-02-25_10-03-07.mp4";
+import promotion3 from "../assets/videos/promotion3.mp4";
+import promotion4 from "../assets/videos/promotion4.mp4";
+import promotion5 from "../assets/videos/promotion5.mp4";
+import promotion6 from "../assets/videos/promotion.mp4";
 
 
 
