@@ -1,39 +1,42 @@
-import React from "react";
-import Hero from "../components/Hero";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import WhoAmI from "../components/whoAmI";
-import Navbar from "../components/Navbar";
 import ShowReels from "../components/ShowReels";
 import Rewards from "../components/rewards";
 import Contact from "../components/contact";
-import Gallery from "../components/gallery";
+import Hero from "../components/Hero";
 
 const HomePage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <div>
-      <Navbar />
-      {/* Add padding-top equal to the navbar height (e.g., 64px) */}
-      <div style={{ paddingTop: '64px', padding: '2rem' }}>
+      <div id="hero" style={{ margin: "40px"}}>
         <Hero />
-        <div id="who-am-i">
-          <WhoAmI />
-        </div>
-        {/* <div id="career-summary">
-          <p>Career Summary Section</p>
-        </div> */}
-        <div id="showreels" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <ShowReels />
-        </div>
-        <div id="gallery" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <Gallery />
-        </div>
-        <div id="rewards">
-          {/* Replace <p> tag with div or other block element */}
-         <Rewards />
-        </div>
-        <div id="contact">
-          {/* Replace <p> tag with div or other block element */}
-          <Contact />
-        </div>
+      </div>
+
+      <div id="who-am-i" style={{ margin: "40px"}}>
+        <WhoAmI />
+      </div>
+      <div id="showreels" style={{ margin: "40px"}}>
+       <ShowReels />
+      </div>
+      <div id="rewards" style={{ margin: "40px"}}>
+        <Rewards />
+      </div>
+      <div id="contact" style={{ margin: "40px"}}>
+       <Contact />
       </div>
     </div>
   );

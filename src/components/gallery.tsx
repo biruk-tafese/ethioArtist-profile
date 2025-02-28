@@ -5,6 +5,7 @@ import artwork2 from '../assets/Endga_3.jpg';
 import artwork3 from '../assets/Endga_3.jpg';
 import artwork4 from '../assets/Endga_6.jpg';
 import artwork5 from '../assets/Endga_home.png';
+import { useNavigate } from 'react-router-dom';
 
 // Mock data for gallery
 const galleryData = [
@@ -36,15 +37,20 @@ const galleryData = [
 ];
 
 const Gallery: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <Box sx={{ padding: 4 }}>
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant="h3" gutterBottom>
                     Gallery
                 </Typography>
-                <Link href="#" variant="body1">
-                    See More
-                </Link>
+                 <Link
+                                          component="button"
+                                          variant="body2"
+                                          onClick={() => navigate('/galleryPage')}
+                                      >
+                                          View All
+                                      </Link>
             </Box>
             <Typography variant="body1" paragraph>
                 Explore my collection of artworks and photography.

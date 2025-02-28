@@ -1,4 +1,3 @@
-import React from 'react';
 import Endga from '../assets/Endga_home.png';
 import { Button, createTheme, ThemeProvider, Typography, Grid } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -46,6 +45,15 @@ export default function Hero() {
     return (
         <ThemeProvider theme={theme}>
             <Grid container spacing={2} sx={{ padding: '2rem', alignItems: 'center' }}>
+                {/* Right section: Random Image */}
+                <Grid item xs={12} sm={6} sx={{ display: { xs: 'flex', sm: 'none' }, justifyContent: 'center' }}>
+                    <img
+                        src={Endga}
+                        alt="Random"
+                        style={{ maxWidth: '100%', borderRadius: '8px' }}
+                    />
+                </Grid>
+
                 {/* Left section: Text and Social Media Buttons */}
                 <Grid item xs={12} sm={6}>
                     <Typography variant="h2">Engdasew Habte</Typography>
@@ -94,18 +102,19 @@ export default function Hero() {
                         {socialMedia.map((social) => (
                             <Grid item key={social.link}>
                                 <Button
-                                    variant="contained"
-                                    style={{ backgroundColor: 'gray', color: 'white' }}
-                                    href={social.link}
-                                    startIcon={<social.icon />}
-                                />
+                                    variant="outlined"
+                                    style={{ color: 'black' }}
+                                    onClick={() => window.open(social.link, '_blank')}
+                                >
+                                    <social.icon />
+                                </Button>
                             </Grid>
                         ))}
                     </Grid>
                 </Grid>
-
+                
                 {/* Right section: Random Image */}
-                <Grid item xs={12} sm={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid item xs={12} sm={6} sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: 'center' }}>
                     <img
                         src={Endga}
                         alt="Random"
@@ -116,3 +125,5 @@ export default function Hero() {
         </ThemeProvider>
     );
 }
+// Compare this snippet from src/pages/contactPage.tsx:
+//     };
