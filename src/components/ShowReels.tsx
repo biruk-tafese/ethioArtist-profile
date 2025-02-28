@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, Button, Grid } from '@mui/material';
 import video1 from "../assets/videos/acting10.mp4";
@@ -44,12 +44,27 @@ const showReelsData = [
 const ShowReels: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
+  const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null); // Track currently playing video
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement | null>(null); // Reference to the video element
 
-  
+  const handleVideoClick = (videoUrl: string) => {
+    // If a video is already playing, pause it
+    if (currentlyPlaying && currentlyPlaying !== videoUrl) {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }
+
+    setSelectedVideoUrl(videoUrl);
+    setOpen(true);
+    setCurrentlyPlaying(videoUrl); // Set the currently playing video
+  };
+
   const handleClose = () => {
     setOpen(false);
     setSelectedVideoUrl('');
+    setCurrentlyPlaying(null); // Reset currently playing video
   };
 
   return (
@@ -74,26 +89,28 @@ const ShowReels: React.FC = () => {
           <Grid item xs={12} sm={6} md={4} key={reel.id}> {/* Responsive grid item */}
             <Card sx={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
               <video
-                
                 title={reel.title}
                 style={{
                   height: '100%', // Full height
                   width: '100%', // Full width
                   objectFit: 'cover', // Cover the card
                 }}
+                controls
+                onClick={() => handleVideoClick(reel.videoUrl)} // Handle video click
+                ref={currentlyPlaying === reel.videoUrl ? videoRef : null} // Set ref if currently playing
               >
                 <source src={reel.videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
-                
               <CardContent>
                 <Typography variant="h6"
-                  sx={{ fontWeight: 'bold', marginBottom: 1 }}
+                  sx={{ fontWeight: 'bold', marginBottom: 1 }} 
+                  align="center"
                 >
                   {reel.title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" align="center">
                   {reel.description}
                 </Typography>
               </CardContent>
@@ -101,15 +118,15 @@ const ShowReels: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-      
-      {/* Dialog for playing the video */}
-      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-        <DialogTitle>Video Player</DialogTitle>
+
+      {/* Video Dialog */}
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+        <DialogTitle>{selectedVideoUrl}</DialogTitle>
         <DialogContent>
           <video
-            controls
-            src={selectedVideoUrl}
+            title={selectedVideoUrl}
             style={{ width: '100%' }}
+            controls
           >
             <source src={selectedVideoUrl} type="video/mp4" />
             Your browser does not support the video tag.
@@ -124,4 +141,4 @@ const ShowReels: React.FC = () => {
     </Box>
   );
 }
-export default ShowReels; 
+export default ShowReels;

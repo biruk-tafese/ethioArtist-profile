@@ -29,12 +29,33 @@ const Navbar: React.FC = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ width: 250 }}>
+    <Box 
+      onClick={handleDrawerToggle} 
+      sx={{ 
+        width: 250, 
+        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Gassy black background
+        height: '100%', 
+        color: 'white' // Text color
+      }}
+    >
       <List>
         {sections.map((section) => (
-          <Box key={section.id} sx={{ border: '1px solid red', borderRadius:"10px", margin: '4px 0' }}>
+          <Box 
+            key={section.id} 
+            sx={{ 
+              border: '1px solid red', 
+              borderRadius: "10px", 
+              margin: '4px 0', 
+              backgroundColor: 'white', // White background for items
+              color: 'black' // Text color for items
+            }}
+          >
             <ListItem>
-              <RouterLink to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => handleNavClick(section.id)}>
+              <RouterLink 
+                to={`/?id=${section.id}`} 
+                style={{ textDecoration: 'none', color: 'inherit' }} 
+                onClick={() => handleNavClick(section.id)}
+              >
                 <ListItemText primary={section.label} />
               </RouterLink>
             </ListItem>
@@ -55,9 +76,9 @@ const Navbar: React.FC = () => {
         </Typography>
 
         {/* Desktop Menu */}
-        <Box sx={{ display: { xs: "none", md: "flex"  }, alignItems: 'center' , justifyContent: 'center' }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: 'center', justifyContent: 'center' }}>
           {sections.map((section) => (
-            <Box key={section.id} sx={{ border: '1px solid red',borderRadius:'10px', margin: '0 8px' }}>
+            <Box key={section.id} sx={{ border: '1px solid red', borderRadius: '10px', margin: '0 8px' }}>
               <RouterLink to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => handleNavClick(section.id)}>
                 <Typography sx={{ padding: '8px' }}>{section.label}</Typography>
               </RouterLink>
