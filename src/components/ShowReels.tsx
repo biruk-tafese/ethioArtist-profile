@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, IconButton, Button, Grid } from '@mui/material';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'; 
+import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, Button, Grid } from '@mui/material';
 import video1 from "../assets/videos/acting10.mp4";
 import video2 from "../assets/videos/video_2025-02-22_10-18-33.mp4";
 import video3 from "../assets/videos/acting18.mp4";
@@ -47,11 +46,7 @@ const ShowReels: React.FC = () => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState<string>('');
   const navigate = useNavigate();
 
-  const handleClickOpen = (videoUrl: string) => {
-    setSelectedVideoUrl(videoUrl);
-    setOpen(true);
-  };
-
+  
   const handleClose = () => {
     setOpen(false);
     setSelectedVideoUrl('');
@@ -79,7 +74,7 @@ const ShowReels: React.FC = () => {
           <Grid item xs={12} sm={6} md={4} key={reel.id}> {/* Responsive grid item */}
             <Card sx={{ position: 'relative', height: '100%', overflow: 'hidden' }}>
               <video
-                controls
+                
                 title={reel.title}
                 style={{
                   height: '100%', // Full height
@@ -90,19 +85,8 @@ const ShowReels: React.FC = () => {
                 <source src={reel.videoUrl} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <IconButton
-                onClick={() => handleClickOpen(reel.videoUrl)}
-                sx={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  color: 'white',
-                }}
-              >
-                <PlayArrowIcon />
-              </IconButton>
+              
+                
               <CardContent>
                 <Typography variant="h6"
                   sx={{ fontWeight: 'bold', marginBottom: 1 }}

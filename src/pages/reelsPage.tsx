@@ -56,7 +56,7 @@ export default function ReelsPage() {
                             src={video.url}
                             style={{ width: '100%', cursor: 'pointer', borderRadius: '8px' }}
                             onClick={() => handleImageClick(video.url)}
-                            controls
+                            
                         />
                         <Typography variant="h6" align="center" sx={{ padding: 1 }}>
                             {video.type}

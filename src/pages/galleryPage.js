@@ -2,24 +2,6 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useState } from 'react';
 import { Grid, Dialog, DialogContent, IconButton, TextField, Typography, Paper } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-// import engda1 from '../assets/photos/Endga_1.jpg';
-// import engda2 from '../assets/photos/Endga_2.jpg';
-// import engda3 from '../assets/photos/Endga_3.jpg';
-// import engda4 from '../assets/photos/Endga_4.jpg';
-// import engda5 from '../assets/photos/Endga_5.jpg';
-// import engda6 from '../assets/photos/Endga_6.jpg';
-// import engdaHome from '../assets/photos/Endga_Home.jpg';
-// import photos from '../assets/photos';
-// import { profile } from 'console';
-// const images = [
-//     engda1,
-//     engda2,
-//     engda3,
-//     engda4,
-//     engda5,
-//     engda6,
-//     engdaHome,
-// ];
 import { profilePhotos, moviePhotos } from '../data/photos';
 const photos1 = profilePhotos;
 const photos2 = moviePhotos;
