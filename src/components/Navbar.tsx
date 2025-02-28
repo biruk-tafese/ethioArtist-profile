@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <RouterLink to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            EthioArtists
+            Engedasew Habte - እንግዳሰዉ ሐብቴ
           </RouterLink>
         </Typography>
 
