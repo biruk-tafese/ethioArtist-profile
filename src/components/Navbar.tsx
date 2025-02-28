@@ -4,9 +4,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link as RouterLink } from "react-router-dom";
 
 const sections = [
-  {Label:"hero", id:"hero"},
+  { label: "Home", id: "hero" },
   { label: "Who Am I", id: "who-am-i" },
   { label: "Showreels", id: "showreels" },
+  { label: "Gallery", id: "gallery" },
   { label: "Rewards", id: "rewards" },
   { label: "Contact", id: "contact" },
 ];
@@ -20,7 +21,6 @@ const Navbar: React.FC = () => {
 
   const handleNavClick = (id: string) => {
     // Close the mobile drawer if it's open
-     
     if (mobileOpen) {
       setMobileOpen(false);
     }
@@ -32,11 +32,13 @@ const Navbar: React.FC = () => {
     <Box onClick={handleDrawerToggle} sx={{ width: 250 }}>
       <List>
         {sections.map((section) => (
-          <ListItem key={section.id}>
-            <RouterLink to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => handleNavClick(section.id)}>
-              <ListItemText primary={section.label} />
-            </RouterLink>
-          </ListItem>
+          <Box key={section.id} sx={{ border: '1px solid red', borderRadius:"10px", margin: '4px 0' }}>
+            <ListItem>
+              <RouterLink to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => handleNavClick(section.id)}>
+                <ListItemText primary={section.label} />
+              </RouterLink>
+            </ListItem>
+          </Box>
         ))}
       </List>
     </Box>
@@ -53,11 +55,13 @@ const Navbar: React.FC = () => {
         </Typography>
 
         {/* Desktop Menu */}
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ display: { xs: "none", md: "flex"  }, alignItems: 'center' , justifyContent: 'center' }}>
           {sections.map((section) => (
-            <RouterLink key={section.id} to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit', margin: '0 16px' }} onClick={() => handleNavClick(section.id)}>
-              <Typography>{section.label}</Typography>
-            </RouterLink>
+            <Box key={section.id} sx={{ border: '1px solid red',borderRadius:'10px', margin: '0 8px' }}>
+              <RouterLink to={`/?id=${section.id}`} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => handleNavClick(section.id)}>
+                <Typography sx={{ padding: '8px' }}>{section.label}</Typography>
+              </RouterLink>
+            </Box>
           ))}
         </Box>
 

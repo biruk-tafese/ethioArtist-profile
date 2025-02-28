@@ -5,6 +5,7 @@ import ShowReels from "../components/ShowReels";
 import Rewards from "../components/rewards";
 import Contact from "../components/contact";
 import Hero from "../components/Hero";
+import Gallery from "../components/gallery";
 
 const HomePage: React.FC = () => {
   const location = useLocation();
@@ -31,6 +32,9 @@ const HomePage: React.FC = () => {
       </div>
       <div id="showreels" style={{ margin: "40px"}}>
        <ShowReels />
+      </div>
+      <div id="gallery" style={{ margin: "40px"}}>
+       <Gallery />
       </div>
       <div id="rewards" style={{ margin: "40px"}}>
         <Rewards />

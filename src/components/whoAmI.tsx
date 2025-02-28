@@ -7,11 +7,11 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import image2 from '../assets/Endga_2.jpg';
-import image3 from '../assets/Endga_3.jpg';
-import image4 from '../assets/Endga_4.jpg';
-import image5 from '../assets/Endga_5.jpg';
-import image6 from '../assets/Endga_6.jpg';
+import image2 from '../assets/photos/Endga_2.jpg';
+import image3 from '../assets/photos/Endga_3.jpg';
+import image4 from '../assets/photos/Endga_4.jpg';
+import image5 from '../assets/photos/Endga_5.jpg';
+import image6 from '../assets/photos/Endga_6.jpg';
 
 const steps = [
   {

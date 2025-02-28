@@ -1,17 +1,14 @@
 import { useState } from 'react';
-import { Grid, Dialog, DialogContent, IconButton, TextField, Typography, CardMedia } from '@mui/material';
+import { Grid, Dialog, DialogContent, IconButton, TextField, Typography, CardMedia, Paper } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import video1_eng from "../assets/video_2025-02-22_10-18-33.mp4";
-import video2_eng from "../assets/video_2025-02-22_10-18-40.mp4";
-import video3_eng from "../assets/video_2025-02-25_10-02-59.mp4";
-import video4_eng from "../assets/video_2025-02-25_10-02-59.mp4";
 
-const videos = [
-    video1_eng,
-    video2_eng,
-    video3_eng,
-    video4_eng,
-];
+import ActingVideos from "../data/videos"
+import PromotionVideos from "../data/videos"
+
+const videos1 = ActingVideos.ActingVideos;
+const videos2 = PromotionVideos.PromotionVideos;
+const videos = videos1.concat(videos2);
+
 
 export default function ReelsPage() {
     const [open, setOpen] = useState(false);
@@ -34,7 +31,7 @@ export default function ReelsPage() {
 
     const filteredVideos = videos.filter((video) => {
         // Customize the filtering logic based on your video names or other criteria
-        return video.includes(searchTerm); // This is a simple example; adjust as needed
+        return video ? video.url.toLowerCase().includes(searchTerm.toLowerCase()) : true; // This is a simple example; adjust as needed
     });
 
     return (
@@ -49,20 +46,26 @@ export default function ReelsPage() {
                 onChange={handleSearchChange}
                 sx={{ marginBottom: 2, marginTop: 4, maxWidth: '600px', mx: 'auto' }} // Center the search bar
             />
-
+           <Paper>
             <Grid container spacing={2} sx={{ paddingTop: 2 }}>
                 {filteredVideos.map((video, index) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                        <Paper>
                         <CardMedia
                             component="video"
-                            src={video}
+                            src={video.url}
                             style={{ width: '100%', cursor: 'pointer', borderRadius: '8px' }}
-                            onClick={() => handleImageClick(video)}
+                            onClick={() => handleImageClick(video.url)}
                             controls
                         />
+                        <Typography variant="h6" align="center" sx={{ padding: 1 }}>
+                            {video.type}
+                        </Typography>
+                        </Paper>
                     </Grid>
                 ))}
             </Grid>
+            </Paper>
 
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
                 <DialogContent>

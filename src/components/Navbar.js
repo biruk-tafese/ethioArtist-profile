@@ -4,9 +4,10 @@ import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListIt
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link as RouterLink } from "react-router-dom";
 const sections = [
-    { Label: "hero", id: "hero" },
+    { label: "Home", id: "hero" },
     { label: "Who Am I", id: "who-am-i" },
     { label: "Showreels", id: "showreels" },
+    { label: "Gallery", id: "gallery" },
     { label: "Rewards", id: "rewards" },
     { label: "Contact", id: "contact" },
 ];
@@ -22,7 +23,7 @@ const Navbar = () => {
         }
         console.log(`Navigating to section: ${id}`);
     };
-    const drawer = (_jsx(Box, { onClick: handleDrawerToggle, sx: { width: 250 }, children: _jsx(List, { children: sections.map((section) => (_jsx(ListItem, { children: _jsx(RouterLink, { to: `/?id=${section.id}`, style: { textDecoration: 'none', color: 'inherit' }, onClick: () => handleNavClick(section.id), children: _jsx(ListItemText, { primary: section.label }) }) }, section.id))) }) }));
-    return (_jsxs(AppBar, { position: "fixed", sx: { backgroundColor: "#222" }, children: [_jsxs(Toolbar, { children: [_jsx(Typography, { variant: "h6", sx: { flexGrow: 1 }, children: _jsx(RouterLink, { to: "/", style: { textDecoration: 'none', color: 'inherit' }, children: "EthioArtists" }) }), _jsx(Box, { sx: { display: { xs: "none", md: "flex" } }, children: sections.map((section) => (_jsx(RouterLink, { to: `/?id=${section.id}`, style: { textDecoration: 'none', color: 'inherit', margin: '0 16px' }, onClick: () => handleNavClick(section.id), children: _jsx(Typography, { children: section.label }) }, section.id))) }), _jsx(IconButton, { edge: "start", color: "inherit", "aria-label": "menu", sx: { display: { md: "none" } }, onClick: handleDrawerToggle, children: _jsx(MenuIcon, {}) })] }), _jsx(Drawer, { anchor: "left", open: mobileOpen, onClose: handleDrawerToggle, children: drawer })] }));
+    const drawer = (_jsx(Box, { onClick: handleDrawerToggle, sx: { width: 250 }, children: _jsx(List, { children: sections.map((section) => (_jsx(Box, { sx: { border: '1px solid red', borderRadius: "10px", margin: '4px 0' }, children: _jsx(ListItem, { children: _jsx(RouterLink, { to: `/?id=${section.id}`, style: { textDecoration: 'none', color: 'inherit' }, onClick: () => handleNavClick(section.id), children: _jsx(ListItemText, { primary: section.label }) }) }) }, section.id))) }) }));
+    return (_jsxs(AppBar, { position: "fixed", sx: { backgroundColor: "#222" }, children: [_jsxs(Toolbar, { children: [_jsx(Typography, { variant: "h6", sx: { flexGrow: 1 }, children: _jsx(RouterLink, { to: "/", style: { textDecoration: 'none', color: 'inherit' }, children: "EthioArtists" }) }), _jsx(Box, { sx: { display: { xs: "none", md: "flex" }, alignItems: 'center', justifyContent: 'center' }, children: sections.map((section) => (_jsx(Box, { sx: { border: '1px solid red', borderRadius: '10px', margin: '0 8px' }, children: _jsx(RouterLink, { to: `/?id=${section.id}`, style: { textDecoration: 'none', color: 'inherit' }, onClick: () => handleNavClick(section.id), children: _jsx(Typography, { sx: { padding: '8px' }, children: section.label }) }) }, section.id))) }), _jsx(IconButton, { edge: "start", color: "inherit", "aria-label": "menu", sx: { display: { md: "none" } }, onClick: handleDrawerToggle, children: _jsx(MenuIcon, {}) })] }), _jsx(Drawer, { anchor: "left", open: mobileOpen, onClose: handleDrawerToggle, children: drawer })] }));
 };
 export default Navbar;

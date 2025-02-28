@@ -6,6 +6,7 @@ import ShowReels from "../components/ShowReels";
 import Rewards from "../components/rewards";
 import Contact from "../components/contact";
 import Hero from "../components/Hero";
+import Gallery from "../components/gallery";
 const HomePage = () => {
     const location = useLocation();
     useEffect(() => {
@@ -18,6 +19,6 @@ const HomePage = () => {
             }
         }
     }, [location]);
-    return (_jsxs("div", { children: [_jsx("div", { id: "hero", style: { margin: "40px" }, children: _jsx(Hero, {}) }), _jsx("div", { id: "who-am-i", style: { margin: "40px" }, children: _jsx(WhoAmI, {}) }), _jsx("div", { id: "showreels", style: { margin: "40px" }, children: _jsx(ShowReels, {}) }), _jsx("div", { id: "rewards", style: { margin: "40px" }, children: _jsx(Rewards, {}) }), _jsx("div", { id: "contact", style: { margin: "40px" }, children: _jsx(Contact, {}) })] }));
+    return (_jsxs("div", { children: [_jsx("div", { id: "hero", style: { margin: "40px" }, children: _jsx(Hero, {}) }), _jsx("div", { id: "who-am-i", style: { margin: "40px" }, children: _jsx(WhoAmI, {}) }), _jsx("div", { id: "showreels", style: { margin: "40px" }, children: _jsx(ShowReels, {}) }), _jsx("div", { id: "gallery", style: { margin: "40px" }, children: _jsx(Gallery, {}) }), _jsx("div", { id: "rewards", style: { margin: "40px" }, children: _jsx(Rewards, {}) }), _jsx("div", { id: "contact", style: { margin: "40px" }, children: _jsx(Contact, {}) })] }));
 };
 export default HomePage;

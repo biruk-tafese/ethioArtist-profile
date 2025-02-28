@@ -1,6 +1,6 @@
 // NotFoundPage.tsx
 import { Box, Typography, Button, Link, Avatar } from '@mui/material';
-import lost_character from '../assets/lost-character.jpg';
+import lost_character from '../assets/photos/lost-character.jpg';
 
 export default function NotFoundPage()  {
   return (

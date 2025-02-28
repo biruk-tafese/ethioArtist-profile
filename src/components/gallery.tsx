@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Typography, Grid, Card, CardMedia, Link } from '@mui/material';
-import artwork1 from '../assets/Endga_1.jpg'; // Replace with actual image paths
-import artwork2 from '../assets/Endga_3.jpg';
-import artwork3 from '../assets/Endga_3.jpg';
-import artwork4 from '../assets/Endga_6.jpg';
-import artwork5 from '../assets/Endga_home.png';
+import artwork1 from '../assets/photos/Endga_2.jpg'; // Replace with actual image paths
+import artwork2 from '../assets/photos/Endga_5.jpg';
+import artwork3 from '../assets/photos/Endgdasew_movie3.jpg';
+import artwork4 from '../assets/photos/Endga_6.jpg';
+import artwork5 from '../assets/photos/Endga_3.jpg';
 import { useNavigate } from 'react-router-dom';
 
 // Mock data for gallery
@@ -44,13 +44,14 @@ const Gallery: React.FC = () => {
                 <Typography variant="h3" gutterBottom>
                     Gallery
                 </Typography>
-                 <Link
-                                          component="button"
-                                          variant="body2"
-                                          onClick={() => navigate('/galleryPage')}
-                                      >
-                                          View All
-                                      </Link>
+                  <Link
+                           component="button"
+                           variant="body2"
+                           onClick={() => navigate('/galleryPage')}
+                           style={{ fontWeight: 'bold', fontSize: '1.5rem' }}
+                         >
+                           View All
+                         </Link>
             </Box>
             <Typography variant="body1" paragraph>
                 Explore my collection of artworks and photography.

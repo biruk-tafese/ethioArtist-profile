@@ -1,5 +1,6 @@
-import Endga from '../assets/Endga_home.png';
-import { Button, createTheme, ThemeProvider, Typography, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import Endga from '../assets/photos/Endga_home.png';
+import { Button, createTheme, ThemeProvider, Typography, Grid, Link } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -21,7 +22,7 @@ theme.typography.h2 = {
 const socialMedia = [
     {
         icon: FacebookIcon,
-        link: 'https://www.facebook.com/engdasew.habte',
+        link: 'https://www.facebook.com/@engdasew.habte.2023',
     },
     {
         icon: InstagramIcon,
@@ -42,6 +43,7 @@ const socialMedia = [
 ];
 
 export default function Hero() {
+    const navigate = useNavigate();
     return (
         <ThemeProvider theme={theme}>
             <Grid container spacing={2} sx={{ padding: '2rem', alignItems: 'center' }}>
@@ -60,7 +62,16 @@ export default function Hero() {
                     <Typography variant="h5">Promotion and Film Actor</Typography>
 
                     <Button style={{ marginTop: '2rem' }} variant="outlined" color="error">
-                        <Typography variant='h6'>ShowReels</Typography>
+                        <Typography variant='h6'>
+                        <Link
+                           component="button"
+                           variant="body2"
+                           onClick={() => navigate('/?id=showreels')}
+                           style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold', fontSize: '1.5rem' }}
+                         >
+                           ShowReels
+                         </Link>
+                        </Typography>
                     </Button>
 
                     <Grid container spacing={2} sx={{ marginTop: '2rem' }}>

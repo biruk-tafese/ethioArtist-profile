@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, IconButton, Button, Grid } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'; 
-import video1 from "../assets/video_2025-02-22_10-18-33.mp4";
-import video2 from "../assets/video_2025-02-22_10-18-40.mp4";
-import video3 from "../assets/video_2025-02-25_10-02-59.mp4";
-import video4 from "../assets/video_2025-02-25_10-02-59.mp4";
-import video5 from "../assets/video_2025-02-25_10-03-07.mp4";
+import video1 from "../assets/videos/acting10.mp4";
+import video2 from "../assets/videos/video_2025-02-22_10-18-33.mp4";
+import video3 from "../assets/videos/acting18.mp4";
+import video4 from "../assets/videos/promotion1.mp4";
+import video5 from "../assets/videos/acting8.mp4";
 
 // Mock data for showreels
 const showReelsData = [
@@ -67,6 +67,7 @@ const ShowReels: React.FC = () => {
           component="button"
           variant="body2"
           onClick={() => navigate('/reelsPage')}
+          style={{ fontWeight: 'bold', fontSize: '1.5rem' }}
         >
           View All
         </Link>

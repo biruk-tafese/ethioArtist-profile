@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
-import awardImage1 from '../assets/Endga_home.png'; // Replace with actual image paths
-import awardImage2 from '../assets/Endga_6.jpg';
-import awardImage3 from '../assets/Endga_6.jpg';
+import awardImage1 from '../assets/photos/Endga_3.jpg'; // Replace with actual image paths
+import awardImage2 from '../assets/photos/Engdasew_movie2.jpg';
+import awardImage3 from '../assets/photos/movie11.jpg';
 
 const awardsData = [
   {

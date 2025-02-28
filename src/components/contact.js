@@ -4,9 +4,9 @@ import { Box, Typography, TextField, Button, Grid, Link } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import EthioTeleLogo from '../assets/telebir_logo.jpg'; // Replace with actual logo paths
-import BYDLogo from '../assets/BYD_logo.jpg';
-import TelebirLogo from '../assets/ethio_tele.jpg';
+import EthioTeleLogo from '../assets/photos/telebir_logo.jpg';
+import BYDLogo from '../assets/photos/BYD_logo.jpg';
+import TelebirLogo from '../assets/photos/ethio_tele.jpg';
 const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

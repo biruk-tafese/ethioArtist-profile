@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Typography, Box, Dialog, DialogActions, DialogContent, DialogTitle, Link, IconButton, Button, Grid } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import video1 from "../assets/video_2025-02-22_10-18-33.mp4";
-import video2 from "../assets/video_2025-02-22_10-18-40.mp4";
-import video3 from "../assets/video_2025-02-25_10-02-59.mp4";
-import video4 from "../assets/video_2025-02-25_10-02-59.mp4";
-import video5 from "../assets/video_2025-02-25_10-03-07.mp4";
+import video1 from "../assets/videos/acting10.mp4";
+import video2 from "../assets/videos/video_2025-02-22_10-18-33.mp4";
+import video3 from "../assets/videos/acting18.mp4";
+import video4 from "../assets/videos/promotion1.mp4";
+import video5 from "../assets/videos/acting8.mp4";
 // Mock data for showreels
 const showReelsData = [
     {
@@ -53,7 +53,7 @@ const ShowReels = () => {
         setOpen(false);
         setSelectedVideoUrl('');
     };
-    return (_jsxs(Box, { sx: { padding: 2 }, children: [_jsxs(Box, { display: "flex", justifyContent: "space-between", alignItems: "center", children: [_jsx(Typography, { variant: "h3", gutterBottom: true, children: "Reels" }), _jsx(Link, { component: "button", variant: "body2", onClick: () => navigate('/reelsPage'), children: "View All" })] }), _jsx(Grid, { container: true, spacing: 2, children: showReelsData.map((reel) => (_jsxs(Grid, { item: true, xs: 12, sm: 6, md: 4, children: [" ", _jsxs(Card, { sx: { position: 'relative', height: '100%', overflow: 'hidden' }, children: [_jsxs("video", { controls: true, title: reel.title, style: {
+    return (_jsxs(Box, { sx: { padding: 2 }, children: [_jsxs(Box, { display: "flex", justifyContent: "space-between", alignItems: "center", children: [_jsx(Typography, { variant: "h3", gutterBottom: true, children: "Reels" }), _jsx(Link, { component: "button", variant: "body2", onClick: () => navigate('/reelsPage'), style: { fontWeight: 'bold', fontSize: '1.5rem' }, children: "View All" })] }), _jsx(Grid, { container: true, spacing: 2, children: showReelsData.map((reel) => (_jsxs(Grid, { item: true, xs: 12, sm: 6, md: 4, children: [" ", _jsxs(Card, { sx: { position: 'relative', height: '100%', overflow: 'hidden' }, children: [_jsxs("video", { controls: true, title: reel.title, style: {
                                         height: '100%', // Full height
                                         width: '100%', // Full width
                                         objectFit: 'cover', // Cover the card
